@@ -62,6 +62,6 @@ var autocomplete;
       }
 
 </script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAyX-k8NRYo0VsnPB8V8-Qs6DrrZjD01YQ&libraries=places&callback=initAutocomplete" type="text/javascript"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_KEY; ?>&libraries=places&callback=initAutocomplete" type="text/javascript"></script>
 
 <?php include_once __DIR__.'/layouts/footer.php'; ?>
