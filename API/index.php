@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/DBObject/Location.php';
-require_once __DIR__ . '/DBObject/User.php';
-require_once __DIR__ . '/Session.php';
+require_once 'DBObject/Location.php';
+require_once 'DBObject/User.php';
+require_once 'Session.php';
 
 $postData = $_POST;
 

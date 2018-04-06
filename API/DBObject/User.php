@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/MySQL.php';
+require_once 'MySQL.php';
 
 class User extends MySQL
 {

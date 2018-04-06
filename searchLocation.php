@@ -8,7 +8,7 @@
 
                            <div class="form-group">
       <label for="password">Location</label>
-      <input class="form-control" type="text" id="searchTextField" name="password" size="50"  placeholder="Enter a location" autocomplete="on"/>
+      <input class="form-control" type="text" id="searchTextField" name="searchTextField" size="50"  placeholder="Enter a location" autocomplete="on"/>
     </div>
   </form>
 
