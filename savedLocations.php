@@ -29,9 +29,6 @@
         <script type="text/javascript">
             $(document).ready(function () {
 
-
-var APIBaseUrl='http://localhost.searchLocation.com/API/index.php';
-
  var jwt=getCookie('jwt');
 
 
@@ -41,7 +38,7 @@ var APIBaseUrl='http://localhost.searchLocation.com/API/index.php';
             "searching": false,
             "ordering": false,
             "ajax": {
-                "url": APIBaseUrl + "?apiName=getAllSavedLocation",
+                "url": API_BASE_URL + "?apiName=getAllSavedLocation",
                 "type": "POST",
                 beforeSend: function(request) {
                     request.setRequestHeader('jwt', jwt);
@@ -49,11 +46,6 @@ var APIBaseUrl='http://localhost.searchLocation.com/API/index.php';
                 "data": function(d){
                     d.method='getAllSavedLocation';
                 }
-                // "success": function(result){
-                //     if (typeof result.invalidJWT !='undefined' && result.invalidJWT) {
-                //         window.location.href = '/unAuthorized.php';
-                //     }
-                // }
             },
             "columns": [
                 {"data": "name"},

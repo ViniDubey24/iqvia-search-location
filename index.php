@@ -31,11 +31,10 @@
 
   $(document.body).on('submit','#loginUser',function(e){
     e.preventDefault();
-          var APIBaseUrl='http://localhost.searchLocation.com/API/index.php';
 
          $.ajax({
             type : 'POST',
-            url : APIBaseUrl+'?apiName=login',
+            url : API_BASE_URL+'?apiName=login',
             type : 'POST',
             data: $(this).serializeArray(),
             dataType : 'JSON',

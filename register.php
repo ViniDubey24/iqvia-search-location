@@ -38,11 +38,9 @@
 
   $(document.body).on('submit','#registerUser',function(e){
     e.preventDefault();
-          var APIBaseUrl='http://localhost.searchLocation.com/API/index.php';
-
          $.ajax({
             type : 'POST',
-            url : APIBaseUrl+'?apiName=register',
+            url : API_BASE_URL+'?apiName=register',
             type : 'POST',
             data: $(this).serializeArray(),
             dataType : 'JSON',

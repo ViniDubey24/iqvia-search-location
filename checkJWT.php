@@ -1,9 +1,10 @@
 <?php
+include_once __DIR__ . '/config.php';
 include_once __DIR__ . '/helperFunctions.php';
 
 $jwt = isset($_COOKIE['jwt']) ? $_COOKIE['jwt'] : null;
 
-$response = executeCurl('http://localhost.searchLocation.com/API/index.php?apiName=checkJWT', [], ["jwt:$jwt"]);
+$response = executeCurl(API_BASE_URL . '?apiName=checkJWT', [], ["jwt:$jwt"]);
 
 $isValidJWT = isset($response['validJWT']) ? $response['validJWT'] : false;
 

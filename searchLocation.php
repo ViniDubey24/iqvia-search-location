@@ -28,7 +28,6 @@ var autocomplete;
         var place = autocomplete.getPlace();
 
         if (confirm("Do you want to save this location?")) {
-          var APIBaseUrl='http://localhost.searchLocation.com/API/index.php';
 
           var locationData={
             'latitude':place.geometry.location.lat(),
@@ -38,7 +37,7 @@ var autocomplete;
           };
          $.ajax({
             type : 'POST',
-            url : APIBaseUrl+'?apiName=saveLocation',
+            url : API_BASE_URL+'?apiName=saveLocation',
             type : 'POST',
             data: locationData,
             dataType : 'JSON',
