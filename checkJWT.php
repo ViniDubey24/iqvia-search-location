@@ -7,6 +7,7 @@ $jwt = isset($_COOKIE['jwt']) ? $_COOKIE['jwt'] : null;
 $response = executeCurl(API_BASE_URL . '?apiName=checkJWT', [], ["jwt:$jwt"]);
 
 $isValidJWT = isset($response['validJWT']) ? $response['validJWT'] : false;
+$sessionDetails = isset($response['sessionDetails']) ? $response['sessionDetails'] : null;
 
 if (!$isValidJWT) {
     header('Location: /');

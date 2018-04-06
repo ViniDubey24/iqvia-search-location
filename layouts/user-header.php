@@ -16,7 +16,7 @@
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/dashboard.php">iqVia - locations</a>
+      <a class="navbar-brand" href="/dashboard.php">Hi - <?php echo $sessionDetails['name']; ?></a>
     </div>
     <ul class="nav navbar-nav">
       <li class=""><a href="/searchLocation.php">Search Location</a></li>

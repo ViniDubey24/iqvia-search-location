@@ -30,7 +30,12 @@ switch ($_GET['apiName']) {
 
                 $insertedID = $userObject->insert($userData);
                 if ($insertedID) {
-                    $jwt = $sessionObject->encodeJWT(['id' => $insertedID, 'emailID' => $userData['emailID']]);
+                    $jwt = $sessionObject->encodeJWT([
+                        'id' => $insertedID,
+                        'emailID' => $userData['emailID'],
+                        'time' => time(),
+                        'name' => $userData['firstName'] . ' ' . $userData['lastName'],
+                    ]);
                     header("jwt: $jwt");
 
                     $response['status'] = 'success';
@@ -59,7 +64,12 @@ switch ($_GET['apiName']) {
 
                 if (isset($userDetails['id'])) {
 
-                    $jwt = $sessionObject->encodeJWT(['id' => $userDetails['id'], 'emailID' => $userDetails['emailID']]);
+                    $jwt = $sessionObject->encodeJWT([
+                        'id' => $userDetails['id'],
+                        'emailID' => $userDetails['emailID'],
+                        'time' => time(),
+                        'name' => $userDetails['firstName'] . ' ' . $userDetails['lastName'],
+                    ]);
 
                     header("jwt: $jwt");
 
@@ -133,6 +143,7 @@ switch ($_GET['apiName']) {
                 foreach ($locations as $location) {
                     $dataForTable[] = [
                         'name' => $location['name'],
+                        'description' => $location['description'],
                         'latitude' => $location['latitude'],
                         'longitude' => $location['longitude'],
                         'createdAt' => $location['createdAt'],
@@ -154,7 +165,8 @@ switch ($_GET['apiName']) {
 
         $isValid = $sessionObject->isValidJWT();
         $response['message'] = ($isValid ? "Valie" : "Invalid") . ' JWT';
-        $response['validJWT'] = $isValid;
+        $response['sessionDetails'] = $isValid;
+        $response['validJWT'] = $isValid ? true : false;
 
         break;
 

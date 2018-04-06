@@ -7,6 +7,7 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Description</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
                                 <th>CreatedAt</th>
@@ -16,6 +17,7 @@
                         <tfoot>
                             <tr>
                                 <th>Name</th>
+                                <th>Description</th>
                                 <th>Latitude</th>
                                 <th>Longitude</th>
                                 <th>CreatedAt</th>
@@ -49,6 +51,7 @@
             },
             "columns": [
                 {"data": "name"},
+                {"data": "description"},
                 {"data": "latitude"},
                 {"data": "longitude"},
                 {"data": "createdAt"},
