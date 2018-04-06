@@ -9,7 +9,7 @@ class MySQL
     private $host = 'localhost';
     private $userName = 'root';
     private $password = '';
-    private $db = 'searchlocation';
+    private $db = 'iqvia';
 
     public function __construct()
     {
