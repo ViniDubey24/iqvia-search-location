@@ -110,6 +110,8 @@ switch ($_GET['apiName']) {
                         $response['status'] = 'success';
                         $response['message'] = 'New location has been saved successfully...';
                         $response['data'] = $insertedID;
+                    } else {
+                        $response['message'] = 'Something went wrong, while saving your location';
                     }
                 } else {
                     $response['message'] = 'Input missing';
