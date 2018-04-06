@@ -1,7 +1,7 @@
 <?php
 function executeCurl($url, $data = [], $headers)
 {
-    
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, 1); //0 for a get request

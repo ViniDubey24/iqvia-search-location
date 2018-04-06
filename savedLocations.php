@@ -1,37 +1,37 @@
-<?php include_once __DIR__.'/layouts/user-header.php'; ?>
+<?php include_once __DIR__ . '/layouts/user-header.php'; ?>
 <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
-  <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <table class="display" id="user-location-table" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>CreatedAt</th>
-                                <!-- <th>Action</th> -->
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
-                                <th>CreatedAt</th>
-                                <!-- <th>Action</th> -->
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="display" id="user-location-table" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>CreatedAt</th>
+                    <!-- <th>Action</th> -->
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>CreatedAt</th>
+                    <!-- <th>Action</th> -->
+                </tr>
+                </tfoot>
+            </table>
         </div>
-        <script type="text/javascript">
-            $(document).ready(function () {
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
 
- var jwt=getCookie('jwt');
+        var jwt = getCookie('jwt');
 
 
         var userLocation = $('#user-location-table').DataTable({
@@ -42,11 +42,11 @@
             "ajax": {
                 "url": API_BASE_URL + "?apiName=getAllSavedLocation",
                 "type": "POST",
-                beforeSend: function(request) {
+                beforeSend: function (request) {
                     request.setRequestHeader('jwt', jwt);
                 },
-                "data": function(d){
-                    d.method='getAllSavedLocation';
+                "data": function (d) {
+                    d.method = 'getAllSavedLocation';
                 }
             },
             "columns": [
@@ -60,8 +60,8 @@
         });
 
     });
-        </script>
+</script>
 
-        
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"> </script>
-<?php include_once __DIR__.'/layouts/footer.php'; ?>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<?php include_once __DIR__ . '/layouts/footer.php'; ?>
