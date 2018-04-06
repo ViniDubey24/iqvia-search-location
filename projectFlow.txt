@@ -1,4 +1,4 @@
-Backend API:
+Backend API's:
 1. register
 2. login
 3. saveLocation
@@ -12,21 +12,21 @@ Steps for calling backend API from UI:[Flow]
 4. User gets redirect to dashboard.php url
 5. By selecting the different tabs 
 select searchLocation tab for searching the locations.
-6. By selecting the saved location . All locations searched by the users gets listed 
+6. By selecting the saved location . All locations searched by the users get listed. 
 7. Saved location page has the pagination . To check page wise data.
 8. Logout button for destroying the JWT.
 
 Folder structure:
 
 1. API 
-   DBObject - Holds the table and common class and functions for inserting , getting records.
+   DBObject - Holds the table and common class,functions for inserting , fetching records.
    Table-
         Location.php : Location table for storing all the locations saved by the user.
         MySQL.php : Stores all the query function needs to be called for API save , display action.
         User.php : User table for storing user information.  		
 2. index.php - API functions called for respective actions.
 3. Session.php - Encode, check validate the JWT 
-4. assets - js file function for set and get cookie.
+4. assets - js file, function for set and get cookie.
 5. layouts - 
         1. header.php : Set the header for page (Before login) 
         2. footer.php : Common footer 
@@ -36,7 +36,9 @@ Folder structure:
 8. index.php - Page before login
 9. register.php - Register page
 10.searchLocations.php - Page for searching the locations.
-11.savedLocation.php - Page for listing all the locations searched by the user.		
+11.savedLocation.php - Page for listing all the locations searched by the user.
+
+DB Folder - SQL file		
 
 
     
